@@ -2,13 +2,9 @@ import os
 from flask import Flask, flash, request, redirect, render_template
 
 app = Flask(__name__)
-
 app.secret_key = "lol"
 
-# Get current path
-path = os.getcwd()
-# file Upload
-UPLOAD_FOLDER = os.path.join(path, 'uploads')
+UPLOAD_FOLDER = os.path.join("E:\Downloads", 'uploads')
 
 # Make directory if uploads is not exists
 if not os.path.isdir(UPLOAD_FOLDER):
@@ -16,12 +12,9 @@ if not os.path.isdir(UPLOAD_FOLDER):
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Allowed extension you can set your own
-
 @app.route('/')
 def upload_form():
     return render_template('index.html')
-
 
 @app.route('/', methods=['POST'])
 def upload_file():
