@@ -3,6 +3,7 @@ from flask import Flask, flash, request, redirect, render_template
 
 app = Flask(__name__)
 app.secret_key = "lol"
+app.config['MAX_CONTENT_LENGTH'] = float("inf")
 
 UPLOAD_FOLDER = os.path.join("E:\Downloads", 'uploads')
 
