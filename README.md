@@ -1,8 +1,8 @@
 ```
 git clone https://github.com/palash-gupta/DeviceToDeviceFileTransfer.git
 cd DeviceToDeviceFileTransfer
-pip install flask
-python app.py --host=0.0.0.0 --post=80
+pip install -r requirements.txt
+python app.py --host=0.0.0.0 --port=80
 ```
 
 - An IP address in the form of 192.168.x.x shows up
